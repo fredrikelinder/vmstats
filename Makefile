@@ -1,4 +1,5 @@
-.PHONY: all test clean edoc compile deps
+.DEFAULT_GOAL = all
+.PHONY: all compile deps clean distclean check test
 REBAR=./rebar
 
 all:
@@ -16,5 +17,5 @@ clean:
 distclean:
 	@$(REBAR) clean delete-deps
 
-test:
+check test:
 	@$(REBAR) eunit skip_deps=true
